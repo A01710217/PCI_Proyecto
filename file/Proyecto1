@@ -1,1 +1,81 @@
 #Proyecto_1
+"""
+JUEGO DE JERARQUÍAS
+"""
+
+print("JUEGO DE JERARQUÍAS")
+n1 = 0
+n2 = 0
+
+operacion ="""
+1.- multiplicar
+2.- dividir
+3.- modulo
+4.- sumar
+5.- restar
+6.- todas
+"""
+
+def multiplicar():
+    print("Primer numero multiplicando: ")
+    n1 = float(input())
+    print("Segundo numero multiplicando: ")
+    n2 = float(input())
+    print("Resultado: ", n1 * n2)
+
+def dividir():
+    print("Primer numero dividiendo: ")
+    n1 = float(input())
+    print("Segundo numero dividiendo: ")
+    n2 = float(input())
+    print("Resultado: ", n1 / n2)
+
+def modulo():
+    print("Primer numero modulo: ")
+    n1 = float(input())
+    print("Segundo numero modulo: ")
+    n2 = float(input())
+    print("Resultado: ", n1 % n2)
+
+def sumar():
+    print("Primer numero sumado: ")
+    n1 = float(input())
+    print("Segundo numero sumar: ")
+    n2 = float(input())
+    print("Resultado: ", n1 + n2)
+
+def restar():
+    print("Primer numero restar: ")
+    n1 = float(input())
+    print("Segundo numero restar: ")
+    n2 = float(input())
+    print("Resultado: ", n1 - n2)
+
+def todas():
+    print("Primer numero: ")
+    n1 = float(input())
+    print("Segundo numero: ")
+    n2 = float(input())
+    print("Resultado multiplicacion: ", n1 * n2)
+    print("Resultado dividir: ", n1 / n2)
+    print("Resultado modulo: ", n1 % n2)
+    print("Resultado suma: ", n1 + n2)
+    print("Resultado resta: ", n1 - n2)
+
+
+print("Bienvenido... ")
+while True:
+    print(operacion)
+    opciones = int(input())
+    if opciones == 1:
+        multiplicar()
+    elif opciones == 2:
+        dividir()
+    elif opciones == 3:
+        modulo()
+    elif opciones == 4:
+        sumar()
+    elif opciones == 5:
+        restar()
+    elif opciones == 6:
+        todas()
