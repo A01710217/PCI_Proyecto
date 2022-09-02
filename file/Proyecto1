@@ -1,20 +1,39 @@
-#Proyecto_1
 """
 JUEGO DE JERARQUÍAS
 """
 
-print("JUEGO DE JERARQUÍAS")
 n1 = 0
 n2 = 0
 
+def jugar():
+    print("Bienvenido al... ")
+    print("JUEGO DE JERARQUÍAS.")
+    print("¿Quíeres jugar? ")
+    start = (input())
+    while start == "No" or start == "no" or start ==  "Si" or start ==  "si":
+      if start == start == "Si" or start == "si":
+        comenzar()
+        break
+      elif start == start == "No" or start == "no":
+        finalizar()
+        break
+      else:
+        exit
+    else:
+        print("Opción no encontrada")
+        print("Seleccione Si o NO")
+        return jugar()
+
+
 operacion ="""
-1.- multiplicar
-2.- dividir
-3.- modulo
-4.- sumar
-5.- restar
-6.- todas
+1.- Multiplicar
+2.- Dividir
+3.- Modulo
+4.- Sumar
+5.- Restar
+6.- Todas
 """
+
 
 def multiplicar():
     print("Primer numero multiplicando: ")
@@ -22,20 +41,29 @@ def multiplicar():
     print("Segundo numero multiplicando: ")
     n2 = float(input())
     print("Resultado: ", n1 * n2)
+    return continuar()
 
 def dividir():
     print("Primer numero dividiendo: ")
     n1 = float(input())
     print("Segundo numero dividiendo: ")
     n2 = float(input())
+    if n2 == 0:
+        print("Imposible realizar esta operación")
+        return continuar()
     print("Resultado: ", n1 / n2)
+    return continuar()
 
 def modulo():
     print("Primer numero modulo: ")
     n1 = float(input())
     print("Segundo numero modulo: ")
     n2 = float(input())
+    if n2 == 0:
+        print("Imposible realizar esta operación")
+        return continuar()
     print("Resultado: ", n1 % n2)
+    return continuar()
 
 def sumar():
     print("Primer numero sumado: ")
@@ -43,6 +71,7 @@ def sumar():
     print("Segundo numero sumar: ")
     n2 = float(input())
     print("Resultado: ", n1 + n2)
+    return continuar()
 
 def restar():
     print("Primer numero restar: ")
@@ -50,6 +79,7 @@ def restar():
     print("Segundo numero restar: ")
     n2 = float(input())
     print("Resultado: ", n1 - n2)
+    return continuar()
 
 def todas():
     print("Primer numero: ")
@@ -61,21 +91,57 @@ def todas():
     print("Resultado modulo: ", n1 % n2)
     print("Resultado suma: ", n1 + n2)
     print("Resultado resta: ", n1 - n2)
+    return continuar()
+
+def comenzar():
+    print("Comencemos")
+    print (operacion)
+    print("Elige una opción.")
+    return menu()
+    
+def finalizar():
+    print("Adiós")
+    return continuar()
 
 
-print("Bienvenido... ")
-while True:
-    print(operacion)
-    opciones = int(input())
-    if opciones == 1:
-        multiplicar()
-    elif opciones == 2:
-        dividir()
-    elif opciones == 3:
-        modulo()
-    elif opciones == 4:
-        sumar()
-    elif opciones == 5:
-        restar()
-    elif opciones == 6:
-        todas()
+def menu():
+    while True:
+        opciones = (input())
+        if opciones == "1" or opciones == "Multiplicar" or opciones == "multiplicar" or opciones == "*":
+            multiplicar()
+        elif opciones == "2" or opciones == "Dividir" or opciones == "dividir" or opciones == "/":
+            dividir()
+        elif opciones == "3" or opciones == "Modulo" or opciones == "modulo" or opciones == "%":
+            modulo()
+        elif opciones == "4" or opciones == "Sumar" or opciones == "sumar" or opciones == "+":
+            sumar()
+        elif opciones == "5" or opciones == "Restar" or opciones == "restar" or opciones == "-":
+            restar()
+        elif opciones == "6" or opciones == "Todas" or opciones == "todas":
+            todas()
+        else:
+            print("Opción no encontrada")
+            print("Seleccione una operacion")
+            return comenzar()
+
+def fin():
+    print("Adios")
+    exit(1)
+
+def continuar():
+    otra = (input("¿Desea continuar jugando? "))
+    while otra == "No" or otra == "no" or otra ==  "Si" or otra ==  "si":
+        if otra == otra == "Si" or otra == "si":
+            return jugar()
+        elif otra == otra == "No" or otra == "no":
+            return fin()
+    else:
+        print("Opcion no encontrada")
+        print(("Seleccione un valor valido; Si o No"))
+        return continuar()
+
+seguir = True
+while seguir == True:
+    jugar()
+    menu()
+    seguir = continuar()
