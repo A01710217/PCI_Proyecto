@@ -9,21 +9,34 @@ def jugar():
     print("Bienvenido al... ")
     print("JUEGO DE JERARQUÍAS.")
     print("¿Quíeres jugar? ")
-    start = (input())
-    while start == "No" or start == "no" or start ==  "Si" or start ==  "si":
-      if start == start == "Si" or start == "si":
-        comenzar()
-        break
-      elif start == start == "No" or start == "no":
-        finalizar()
-        break
-      else:
-        exit
-    else:
-        print("Opción no encontrada")
-        print("Seleccione Si o NO")
-        return jugar()
+    contador = 0
+    while contador < 4:
+        start = (input())
+        while start == "No" or start == "no" or start ==  "Si" or start ==  "si":
+            if start == start == "Si" or start == "si":
+                comenzar()
+                break
+            elif start == start == "No" or start == "no":
+                finalizar()
+                break
+            else:
+                exit
+        else:
+            contador = contador + 1
+            print("Opción no encontrada")
+            if contador < 3:
+                print("Seleccione Si o NO")
+            if contador == 2:
+                print("Te quedan dos intentos")
+            if contador == 3:
+                print("Te quedan dos intentos")
+                print ("Se cerrara el juego, si no se selecciona Si o No")
+            if contador == 4:
+                return error()
 
+
+def nuevo_juego():
+    comenzar()
 
 operacion ="""
 1.- Multiplicar
@@ -33,65 +46,188 @@ operacion ="""
 5.- Restar
 6.- Todas
 """
+def es_numerico(numeros):
+    try:
+        float(numeros)
+        return True
+    except ValueError:
+        return False
 
 
 def multiplicar():
-    print("Primer numero multiplicando: ")
-    n1 = float(input())
-    print("Segundo numero multiplicando: ")
-    n2 = float(input())
-    print("Resultado: ", n1 * n2)
-    return continuar()
+        print("Primer numero multiplicando: ")
+        n1 = (input())
+        if es_numerico(n1):
+            n1 = float(n1)
+            print("Segundo numero multiplicando: ")
+        else:
+            print("Primer numero no valido")
+            return continuar()
+        n2 = (input())
+        if es_numerico(n2):
+            n2 = float(n2)
+            print("Resultado: ", n1 * n2)
+            return continuar()
+        else:
+            print("Segundo numero no valido")
+            return continuar()
 
 def dividir():
     print("Primer numero dividiendo: ")
-    n1 = float(input())
-    print("Segundo numero dividiendo: ")
-    n2 = float(input())
-    if n2 == 0:
-        print("Imposible realizar esta operación")
+    n1 = (input())
+    if es_numerico(n1):
+        n1 = float(n1)
+        print("Segundo numero dividiendo: ")
+    else:
+        print("Primer numero no valido")
         return continuar()
-    print("Resultado: ", n1 / n2)
-    return continuar()
+    n2 = (input())
+    if es_numerico(n2):
+        n2 = float(n2)
+        if n2 == 0:
+            print("Imposible realizar esta operación")
+            return continuar()
+        print("Resultado: ", n1 / n2)
+        return continuar()
+    else:
+        print("Segundo numero no valido")
+        return continuar()
 
 def modulo():
     print("Primer numero modulo: ")
-    n1 = float(input())
-    print("Segundo numero modulo: ")
-    n2 = float(input())
-    if n2 == 0:
-        print("Imposible realizar esta operación")
+    n1 = (input())
+    if es_numerico(n1):
+        n1 = float(n1)
+        print("Segundo numero modulo: ")
+    else:
+        print("Primer numero no valido")
         return continuar()
-    print("Resultado: ", n1 % n2)
-    return continuar()
+    n2 = (input())
+    if es_numerico(n2):
+        n2 = float(n2)
+        if n2 == 0:
+            print("Imposible realizar esta operación")
+            return continuar()
+        print("Resultado: ", n1 % n2)
+        return continuar()
+    else:
+        print("Segundo numero no valido")
+        return continuar()
 
 def sumar():
     print("Primer numero sumado: ")
-    n1 = float(input())
-    print("Segundo numero sumar: ")
-    n2 = float(input())
-    print("Resultado: ", n1 + n2)
-    return continuar()
+    n1 = (input())
+    if es_numerico(n1):
+        n1 = float(n1)
+        print("Segundo numero sumar: ")
+    else:
+        print("Primer numero no valido")
+        return continuar()
+    n2 = (input())
+    if es_numerico(n2):
+        n2 = float(n2)
+        print("Resultado: ", n1 + n2)
+        return continuar()
+    else:
+        print("Segundo numero no valido")
+        return continuar()
 
 def restar():
     print("Primer numero restar: ")
-    n1 = float(input())
-    print("Segundo numero restar: ")
-    n2 = float(input())
-    print("Resultado: ", n1 - n2)
-    return continuar()
+    n1 = (input())
+    if es_numerico(n1):
+        n1 = float(n1)
+        print("Segundo numero restar: ")
+    else:
+        print("Primer numero no valido")
+        return continuar()
+    n2 = (input())
+    if es_numerico(n2):
+        n2 = float(n2)
+        print("Resultado: ", n1 - n2)
+        return continuar()
+    else:
+        print("Segundo numero no valido")
+        return continuar()
 
 def todas():
     print("Primer numero: ")
-    n1 = float(input())
-    print("Segundo numero: ")
-    n2 = float(input())
-    print("Resultado multiplicacion: ", n1 * n2)
-    print("Resultado dividir: ", n1 / n2)
-    print("Resultado modulo: ", n1 % n2)
-    print("Resultado suma: ", n1 + n2)
-    print("Resultado resta: ", n1 - n2)
-    return continuar()
+    n1 = (input())
+    if es_numerico(n1):
+        n1 = float(n1)
+        print("Segundo numero: ")
+    else:
+        print("Primer numero no valido")
+        return continuar()
+    n2 = (input())
+    if es_numerico(n2):
+        n2 = float(n2)
+        if n2 == 0:
+            print("Imposible realizar esta operación")
+            return continuar()
+        print("Resultado multiplicacion: ", n1 * n2)
+        print("Resultado dividir: ", n1 / n2)
+        print("Resultado modulo: ", n1 % n2)
+        print("Resultado suma: ", n1 + n2)
+        print("Resultado resta: ", n1 - n2)
+        return continuar()
+    else:
+        print("Segundo numero no valido")
+        return continuar()
+
+def menu():
+    contador = 0
+    while contador < 4:
+        while True:
+            opciones = (input())
+            if opciones == "1" or opciones == "Multiplicar" or opciones == "multiplicar" or opciones == "*":
+                multiplicar()
+            elif opciones == "2" or opciones == "Dividir" or opciones == "dividir" or opciones == "/":
+                dividir()
+            elif opciones == "3" or opciones == "Modulo" or opciones == "modulo" or opciones == "%":
+                modulo()
+            elif opciones == "4" or opciones == "Sumar" or opciones == "sumar" or opciones == "+":
+                sumar()
+            elif opciones == "5" or opciones == "Restar" or opciones == "restar" or opciones == "-":
+                restar()
+            elif opciones == "6" or opciones == "Todas" or opciones == "todas":
+                todas()
+            else:
+                contador = contador +1
+                print("Opción no encontrada")
+                if contador < 3:
+                    print("Seleccione una operacion")
+                if contador == 2:
+                    print("Te quedan dos intentos")
+                if contador == 3:
+                    print("Te queda un intento")
+                    print("Se cerrara el juego, si no se selecciona una operación")
+                if contador == 4:
+                    return error()
+
+
+def continuar():
+    contador = 0
+    while contador < 4:
+        otra = (input("¿Desea continuar jugando? "))
+        while otra == "No" or otra == "no" or otra ==  "Si" or otra ==  "si":
+            if otra == otra == "Si" or otra == "si":
+                return nuevo_juego()
+            elif otra == otra == "No" or otra == "no":
+                return fin()
+        else:
+            contador = contador +1
+            print("Opción no encontrada")
+            if contador < 3:
+                print(("Seleccione un valor valido; Si o No"))
+            if contador == 2:
+                print("Te quedan dos intentos")
+            if contador == 3:
+                print("Te queda un intento")
+                print("Se cerrara el juego, si no se selecciona Si o No")
+            if contador == 4:
+                return error()
+
 
 def comenzar():
     print("Comencemos")
@@ -100,48 +236,15 @@ def comenzar():
     return menu()
     
 def finalizar():
-    print("Adiós")
+    print("Adios")
     return continuar()
 
-
-def menu():
-    while True:
-        opciones = (input())
-        if opciones == "1" or opciones == "Multiplicar" or opciones == "multiplicar" or opciones == "*":
-            multiplicar()
-        elif opciones == "2" or opciones == "Dividir" or opciones == "dividir" or opciones == "/":
-            dividir()
-        elif opciones == "3" or opciones == "Modulo" or opciones == "modulo" or opciones == "%":
-            modulo()
-        elif opciones == "4" or opciones == "Sumar" or opciones == "sumar" or opciones == "+":
-            sumar()
-        elif opciones == "5" or opciones == "Restar" or opciones == "restar" or opciones == "-":
-            restar()
-        elif opciones == "6" or opciones == "Todas" or opciones == "todas":
-            todas()
-        else:
-            print("Opción no encontrada")
-            print("Seleccione una operacion")
-            return comenzar()
+def error():
+    print("Se exedio el numero de intentos.")
+    return fin()
 
 def fin():
-    print("Adios")
+    print("Adiós.")
     exit(1)
 
-def continuar():
-    otra = (input("¿Desea continuar jugando? "))
-    while otra == "No" or otra == "no" or otra ==  "Si" or otra ==  "si":
-        if otra == otra == "Si" or otra == "si":
-            return jugar()
-        elif otra == otra == "No" or otra == "no":
-            return fin()
-    else:
-        print("Opcion no encontrada")
-        print(("Seleccione un valor valido; Si o No"))
-        return continuar()
-
-seguir = True
-while seguir == True:
-    jugar()
-    menu()
-    seguir = continuar()
+jugar()
