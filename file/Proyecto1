@@ -10,11 +10,9 @@ def jugar():
         start = (input())
         while start == "No" or start == "no" or start ==  "Si" or start ==  "si":
             if start == start == "Si" or start == "si":
-                comenzar()
-                break
+                return comenzar()
             elif start == start == "No" or start == "no":
-                finalizar()
-                break
+                return fin()
             else:
                 exit
         else:
@@ -32,11 +30,11 @@ def jugar():
 
 
 operacion =  """
-1.- Producto Cruz.
-2.- Producto punto.
-3.- Triple_producto_escalar.
-4.- Magnitud de vectores.
-5.- Finalizar.
+1.- Producto Cruz
+2.- Producto punto
+3.- Triple producto escalar
+4.- Magnitud de vectores
+5.- Finalizar
 """
 
 def es_numerico(numeros):
@@ -233,16 +231,16 @@ def menu():
     while contador < 4:
         while True:
             opciones = (input())
-            if opciones == "1" or opciones == "Producto cruz" or opciones == "producto cruz" or opciones == "X" or opciones == "x":
-                producto_cruz()
-            elif opciones == "2" or opciones == "Multiplicar vectores" or opciones == "multiplicar vectores" or opciones == "Multiplicar" or opciones == "multiplicar" or opciones == "*":
-                producto_punto()
-            elif opciones == "3" or opciones == "Divición de vectores" or opciones == "divición de vectores" or opciones == "Divición" or opciones == "divición" or opciones == "/":
-                triple_producto_escalar()
-            elif opciones == "4" or opciones == "Magnitud de vectores" or opciones == "magnitud de vectores" or opciones == "Magnitud" or opciones == "magnitud" or opciones == "**1/2":
-                magnitud_de_vectores()
+            if opciones == "1" or opciones == "Producto cruz" or opciones == "producto cruz":
+                return producto_cruz()
+            elif opciones == "2" or opciones == "Producto punto" or opciones == "producto punto":
+                return producto_punto()
+            elif opciones == "3" or opciones == "Triple producto escalar" or opciones == "triple producto escalar":
+                return triple_producto_escalar()
+            elif opciones == "4" or opciones == "Magnitud de vectores" or opciones == "magnitud de vectores":
+                return magnitud_de_vectores()
             elif opciones == "5" or opciones == "Finalizar" or opciones == "finalizar":
-                fin()
+                return fin()
             else:
                 contador = contador +1
                 print("Opción no encontrada")
@@ -262,7 +260,7 @@ def continuar():
         otra = (input("¿Desea continuar jugando? "))
         while otra == "No" or otra == "no" or otra ==  "Si" or otra ==  "si":
             if otra == otra == "Si" or otra == "si":
-                return nuevo_juego()
+                return comenzar()
             elif otra == otra == "No" or otra == "no":
                 return fin()
         else:
@@ -283,17 +281,13 @@ def nuevo_juego():
     listas_a.clear()
     listas_b.clear()
     listas_c.clear()
-    comenzar()
+    return continuar()
 
 def comenzar():
     print("Comencemos")
     print (operacion)
     print("Elige una opción.")
     return menu()
-    
-def finalizar():
-    print("Adios")
-    return nuevo_juego()
 
 def error():
     print("Se exedio el numero de intentos.")
