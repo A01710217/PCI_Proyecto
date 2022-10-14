@@ -1,6 +1,7 @@
 # PCI_Proyecto
 #Realiar:
-Un programa de Jerarquías, donde se le arrojen dos numeros y este realice un tipo de operacion o todas.
+#Se cambió el proyecto devido a el anterior no tenia el alcance y dificultad requerida para la evaluacion de este.
+Tiene algunas lineas de codigo antes puestas y nuevas lineas con nuevas operaciones. 
 
 1.- Inicio
 
@@ -16,11 +17,13 @@ Un programa de Jerarquías, donde se le arrojen dos numeros y este realice un ti
 
   3.1.- decir elegir una opción
   
-  3.2.- decir que seleccione un número
+  3.2.- pedir vectores al usuario (a)
   
-  3.3.- decir que seleccione un segundo número
+  3.3.- pedir vectores al usuario (b)
   
-  3.4.- generar la operacion
+  3.4.- pedir vectores al usuario (c)
+  
+  3.5.- generar la operacion
   
 4.- Cuestionar si quiere jugar otra vez
 
