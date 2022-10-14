@@ -3,6 +3,10 @@
 #Se cambió el proyecto devido a el anterior no tenia el alcance y dificultad requerida para la evaluacion de este.
 Tiene algunas lineas de codigo antes puestas y nuevas lineas con nuevas operaciones. 
 
+"""
+Calculo de producto cruz, producto punto y Magnitudes
+"""
+
 1.- Inicio
 
 2.- Decidir si sequiere jugar o no
