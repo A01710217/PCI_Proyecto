@@ -1,0 +1,34 @@
+El programa presupone ser lo mas intuitivo para el usuario.
+
+1.- Se le cuestionara al usuario "¿Quíeres empezar?" a lo que el usuario puede seleccionar Si o si y No o no
+  1.1.- Si se selecciona No o no el programa se cerrara.
+2.- Si se selecciona Si o si se desplegara el menú.
+"""
+1.- Producto Cruz
+2.- Producto punto
+3.- Triple producto escalar
+4.- Magnitud de vectores 
+5.- Finalizar
+"""
+y se dira que seleccione una opcion sepuede elegir los números o las mismas palabras que se muestran.
+  2.1.- Si se selecciona 5 o Finalizar se cerrara el programa.
+3.- Si se seleciona 1 o Producto cruz se pediran valores del vector a y b, el programa solo acepta números, se hara el calculo.
+  3.1.- Luego se preguntara "¿Quíeres calcular la magnitud?" a lo que el usuario puede seleccionar Si o si y No o no.
+    3.1.1.- Si se selecciona No o no el programa preguntara "¿Desea continuar jugando?" a lo que el usuario puede seleccionar Si o si y No o no.
+      3.1.1.1.- Si se selecciona No o no el programa se cerrara.
+      3.1.1.2.- Si se selecciona Si o si el programa se volvera a ejecutar.
+    3.1.2.- Si se selecciona Si o si el programa lo calculara y preguntara "¿Desea continuar jugando?" a lo que el usuario puede seleccionar Si o si y No o no.
+      3.1.2.1.- Si se selecciona No o no el programa se cerrara.
+      3.1.2.2.- Si se selecciona Si o si el programa se volvera a ejecutar.
+4.- Si se selecciona 2 o Producto punto se pediran valores del vector a y b, el programa solo acepta números, se hara el calculo.
+  4.1.- El programa preguntara "¿Desea continuar jugando?" a lo que el usuario puede seleccionar Si o si y No o no.
+    4.1.1.- Si se selecciona No o no el programa se cerrara.
+    4.1.2.- Si se selecciona Si o si el programa se volvera a ejecutar.
+5.- Si se selecciona 3 o Triple producto escalar se pediran valores del vector a, b y c, el programa solo acepta números, se hara el calculo.
+  5.1.- El programa preguntara "¿Desea continuar jugando?" a lo que el usuario puede seleccionar Si o si y No o no.
+    5.1.1.- Si se selecciona No o no el programa se cerrara.
+    5.1.2.- Si se selecciona Si o si el programa se volvera a ejecutar.
+6.- Si se selecciona 4 o Magnitud de vectores escalar se pediran valores del vector a, el programa solo acepta números, se hara el calculo.
+  6.1.- El programa preguntara "¿Desea continuar jugando?" a lo que el usuario puede seleccionar Si o si y No o no.
+    6.1.1.- Si se selecciona No o no el programa se cerrara.
+    6.1.2.- Si se selecciona Si o si el programa se volvera a ejecutar.
