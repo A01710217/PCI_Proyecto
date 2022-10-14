@@ -1,14 +1,10 @@
 """
-JUEGO DE JERARQUÍAS
+Calculo de producto cruz, producto punto y Magnitudes
 """
-
-n1 = 0
-n2 = 0
-
 def jugar():
     print("Bienvenido al... ")
-    print("JUEGO DE JERARQUÍAS.")
-    print("¿Quíeres jugar? ")
+    print("Calculo de producto cruz y Magnitudes.")
+    print("¿Quíeres empezar?")
     contador = 0
     while contador < 4:
         start = (input())
@@ -29,23 +25,20 @@ def jugar():
             if contador == 2:
                 print("Te quedan dos intentos")
             if contador == 3:
-                print("Te quedan dos intentos")
+                print("Te quedan un intentos")
                 print ("Se cerrara el juego, si no se selecciona Si o No")
             if contador == 4:
                 return error()
 
 
-def nuevo_juego():
-    comenzar()
-
-operacion ="""
-1.- Multiplicar
-2.- Dividir
-3.- Modulo
-4.- Sumar
-5.- Restar
-6.- Todas
+operacion =  """
+1.- Producto Cruz.
+2.- Producto punto.
+3.- Triple_producto_escalar.
+4.- Magnitud de vectores.
+5.- Finalizar.
 """
+
 def es_numerico(numeros):
     try:
         float(numeros)
@@ -53,145 +46,203 @@ def es_numerico(numeros):
     except ValueError:
         return False
 
+listas_a = []
+def vector_a():
+    
+    print("Vector i:")
+    vector_i = (input())
+    if es_numerico(vector_i):
+        vector_i = float(vector_i)
+        listas_a.append(vector_i)
+    else:
+        print("Vector i no es un numero real")
+        return continuar()
+    
+    print("Vector j:")
+    vector_j = (input())
+    if es_numerico(vector_j):
+        vector_j = float(vector_j)
+        listas_a.append(vector_j)
+        
+    else:
+        print("Vector j no es un numero real")
+        return continuar()
 
-def multiplicar():
-        print("Primer numero multiplicando: ")
-        n1 = (input())
-        if es_numerico(n1):
-            n1 = float(n1)
-            print("Segundo numero multiplicando: ")
+    print("Vector k:")
+    vector_k = (input())
+    if es_numerico(vector_k):
+        vector_k = float(vector_k)
+        listas_a.append(vector_k)
+    else:
+        print("Vector k no es un numero real")
+        return continuar()
+    print(listas_a)
+
+listas_b = []
+    
+def vector_b():
+    print("Vector i:")
+    vector_i = (input())
+    if es_numerico(vector_i):
+        vector_i = float(vector_i)
+        listas_b.append(vector_i)
+    else:
+        print("Vector i no es un numero real")
+        return continuar()
+    
+    print("Vector j:")
+    vector_j = (input())
+    if es_numerico(vector_j):
+        vector_j = float(vector_j)
+        listas_b.append(vector_j)
+    else:
+        print("Vector j no es un numero real")
+        return continuar()
+
+    print("Vector k:")
+    vector_k = (input())
+    if es_numerico(vector_k):
+        vector_k = float(vector_k)
+        listas_b.append(vector_k)
+    else:
+        print("Vector k no es un numero real")
+        return continuar()
+    print(listas_b)
+
+listas_c = []
+def vector_c():
+    print("Vector i:")
+    vector_i = (input())
+    if es_numerico(vector_i):
+        vector_i = float(vector_i)
+        listas_c.append(vector_i)
+    else:
+        print("Vector i no es un numero real")
+        return continuar()
+    
+    print("Vector j:")
+    vector_j = (input())
+    if es_numerico(vector_j):
+        vector_j = float(vector_j)
+        listas_c.append(vector_j)
+    else:
+        print("Vector j no es un numero real")
+        return continuar()
+
+    print("Vector k:")
+    vector_k = (input())
+    if es_numerico(vector_k):
+        vector_k = float(vector_k)
+        listas_c.append(vector_k)
+    else:
+        print("Vector k no es un numero real")
+        return continuar()
+    print(listas_c)
+
+matriz = []
+
+def producto_cruz():
+    print("Forma axb")
+    vector_a()
+    vector_b()
+    matriz.append(["i", "j", "k"])       
+    matriz.append(listas_a)
+    matriz.append(listas_b)
+    print(f""" 
+    {matriz[0]}
+    {matriz[1]}
+    {matriz[2]}
+    """)                            
+    print("Resultado")
+    i = (listas_a[1] *  listas_b[2]) - (listas_b[1] * listas_a[2])
+    j = -((listas_a[0] * listas_b[2]) - (listas_b[0] * listas_a[2])) 
+    k = (listas_a[0] * listas_b[1]) - (listas_b[0] * listas_a[2] )
+    print(f"{i}i {j}j {k}k")
+
+    print("¿Quíeres calcular la magnitud?")
+    contador = 0
+    while contador < 4:
+        calcularM = (input())
+        if calcularM == "Si" or calcularM == "si":
+            magnitud = ((i ** 2) + (j ** 2) + (k ** 2))**.5
+            print(magnitud)
+            return nuevo_juego()
+        elif calcularM == "No" or calcularM == "no":
+            return nuevo_juego()
         else:
-            print("Primer numero no valido")
-            return continuar()
-        n2 = (input())
-        if es_numerico(n2):
-            n2 = float(n2)
-            print("Resultado: ", n1 * n2)
-            return continuar()
-        else:
-            print("Segundo numero no valido")
-            return continuar()
+            contador += 1
+            print("Opción no encontrada")
+            if contador < 3:
+                print("Seleccione Si o NO")
+            if contador == 2:
+                print("Te quedan dos intentos")
+            if contador == 3:
+                print("Te quedan un intentos")
+                print ("Se cerrara el juego, si no se selecciona Si o No")
+            if contador == 4:
+                return error()
 
-def dividir():
-    print("Primer numero dividiendo: ")
-    n1 = (input())
-    if es_numerico(n1):
-        n1 = float(n1)
-        print("Segundo numero dividiendo: ")
-    else:
-        print("Primer numero no valido")
-        return continuar()
-    n2 = (input())
-    if es_numerico(n2):
-        n2 = float(n2)
-        if n2 == 0:
-            print("Imposible realizar esta operación")
-            return continuar()
-        print("Resultado: ", n1 / n2)
-        return continuar()
-    else:
-        print("Segundo numero no valido")
-        return continuar()
+def producto_punto():
+    print("Forma a*b")
+    vector_a()
+    vector_b()     
+    matriz.append(listas_a)
+    matriz.append(listas_b)
+    print(f"{matriz[0]} * {matriz[1]}")
+    print("Resultado")
+    i = (listas_a[0]) * (listas_b[0])
+    j = (listas_a[1]) * (listas_b[1])
+    k = (listas_a[2]) * (listas_b[2])
+    print(i + j + k)
+    return nuevo_juego()
 
-def modulo():
-    print("Primer numero modulo: ")
-    n1 = (input())
-    if es_numerico(n1):
-        n1 = float(n1)
-        print("Segundo numero modulo: ")
-    else:
-        print("Primer numero no valido")
-        return continuar()
-    n2 = (input())
-    if es_numerico(n2):
-        n2 = float(n2)
-        if n2 == 0:
-            print("Imposible realizar esta operación")
-            return continuar()
-        print("Resultado: ", n1 % n2)
-        return continuar()
-    else:
-        print("Segundo numero no valido")
-        return continuar()
+def triple_producto_escalar():
+    print("Forma axb*c")
+    vector_a()
+    vector_b()
+    vector_c()
+    matriz.append(["i", "j", "k"])
+    matriz.append(listas_a)
+    matriz.append(listas_b)
+    print(f""" 
+    {matriz[0]}
+    {matriz[1]} * {listas_c}
+    {matriz[2]}
+    """)
 
-def sumar():
-    print("Primer numero sumado: ")
-    n1 = (input())
-    if es_numerico(n1):
-        n1 = float(n1)
-        print("Segundo numero sumar: ")
-    else:
-        print("Primer numero no valido")
-        return continuar()
-    n2 = (input())
-    if es_numerico(n2):
-        n2 = float(n2)
-        print("Resultado: ", n1 + n2)
-        return continuar()
-    else:
-        print("Segundo numero no valido")
-        return continuar()
+    print("Resultado")
+    i = (listas_a[1] *  listas_b[2]) - (listas_b[1] * listas_a[2])
+    j = -((listas_a[0] * listas_b[2]) - (listas_b[0] * listas_a[2])) 
+    k = (listas_a[0] * listas_b[1]) - (listas_b[0] * listas_a[2] )
+    i2 = i * (listas_c[0])
+    j2 = j * (listas_c[1])
+    k2 = k * (listas_c[2])
+    print(i2 + j2 + k2)
+    return nuevo_juego()
 
-def restar():
-    print("Primer numero restar: ")
-    n1 = (input())
-    if es_numerico(n1):
-        n1 = float(n1)
-        print("Segundo numero restar: ")
-    else:
-        print("Primer numero no valido")
-        return continuar()
-    n2 = (input())
-    if es_numerico(n2):
-        n2 = float(n2)
-        print("Resultado: ", n1 - n2)
-        return continuar()
-    else:
-        print("Segundo numero no valido")
-        return continuar()
-
-def todas():
-    print("Primer numero: ")
-    n1 = (input())
-    if es_numerico(n1):
-        n1 = float(n1)
-        print("Segundo numero: ")
-    else:
-        print("Primer numero no valido")
-        return continuar()
-    n2 = (input())
-    if es_numerico(n2):
-        n2 = float(n2)
-        if n2 == 0:
-            print("Imposible realizar esta operación")
-            return continuar()
-        print("Resultado multiplicacion: ", n1 * n2)
-        print("Resultado dividir: ", n1 / n2)
-        print("Resultado modulo: ", n1 % n2)
-        print("Resultado suma: ", n1 + n2)
-        print("Resultado resta: ", n1 - n2)
-        return continuar()
-    else:
-        print("Segundo numero no valido")
-        return continuar()
+def magnitud_de_vectores():
+    print("Forma a = i + j + k")
+    vector_a()
+    print("Resultado")
+    magnitud = ((listas_a[0] * listas_a[0]) + (listas_a[1] * listas_a[1]) + (listas_a[2] * listas_a[2])) ** .5
+    print(magnitud)
+    return nuevo_juego()
 
 def menu():
     contador = 0
     while contador < 4:
         while True:
             opciones = (input())
-            if opciones == "1" or opciones == "Multiplicar" or opciones == "multiplicar" or opciones == "*":
-                multiplicar()
-            elif opciones == "2" or opciones == "Dividir" or opciones == "dividir" or opciones == "/":
-                dividir()
-            elif opciones == "3" or opciones == "Modulo" or opciones == "modulo" or opciones == "%":
-                modulo()
-            elif opciones == "4" or opciones == "Sumar" or opciones == "sumar" or opciones == "+":
-                sumar()
-            elif opciones == "5" or opciones == "Restar" or opciones == "restar" or opciones == "-":
-                restar()
-            elif opciones == "6" or opciones == "Todas" or opciones == "todas":
-                todas()
+            if opciones == "1" or opciones == "Producto cruz" or opciones == "producto cruz" or opciones == "X" or opciones == "x":
+                producto_cruz()
+            elif opciones == "2" or opciones == "Multiplicar vectores" or opciones == "multiplicar vectores" or opciones == "Multiplicar" or opciones == "multiplicar" or opciones == "*":
+                producto_punto()
+            elif opciones == "3" or opciones == "Divición de vectores" or opciones == "divición de vectores" or opciones == "Divición" or opciones == "divición" or opciones == "/":
+                triple_producto_escalar()
+            elif opciones == "4" or opciones == "Magnitud de vectores" or opciones == "magnitud de vectores" or opciones == "Magnitud" or opciones == "magnitud" or opciones == "**1/2":
+                magnitud_de_vectores()
+            elif opciones == "5" or opciones == "Finalizar" or opciones == "finalizar":
+                fin()
             else:
                 contador = contador +1
                 print("Opción no encontrada")
@@ -204,7 +255,6 @@ def menu():
                     print("Se cerrara el juego, si no se selecciona una operación")
                 if contador == 4:
                     return error()
-
 
 def continuar():
     contador = 0
@@ -228,6 +278,12 @@ def continuar():
             if contador == 4:
                 return error()
 
+def nuevo_juego():
+    matriz.clear()
+    listas_a.clear()
+    listas_b.clear()
+    listas_c.clear()
+    comenzar()
 
 def comenzar():
     print("Comencemos")
@@ -237,7 +293,7 @@ def comenzar():
     
 def finalizar():
     print("Adios")
-    return continuar()
+    return nuevo_juego()
 
 def error():
     print("Se exedio el numero de intentos.")
