@@ -54,7 +54,7 @@ def vector_a():
         listas_a.append(vector_i)
     else:
         print("Vector i no es un numero real")
-        return continuar()
+        return nuevo_juego()
     
     print("Vector j:")
     vector_j = (input())
@@ -64,7 +64,7 @@ def vector_a():
         
     else:
         print("Vector j no es un numero real")
-        return continuar()
+        return nuevo_juego()
 
     print("Vector k:")
     vector_k = (input())
@@ -73,7 +73,7 @@ def vector_a():
         listas_a.append(vector_k)
     else:
         print("Vector k no es un numero real")
-        return continuar()
+        return nuevo_juego()
     print(listas_a)
 
 listas_b = []
@@ -86,7 +86,7 @@ def vector_b():
         listas_b.append(vector_i)
     else:
         print("Vector i no es un numero real")
-        return continuar()
+        return nuevo_juego()
     
     print("Vector j:")
     vector_j = (input())
@@ -95,7 +95,7 @@ def vector_b():
         listas_b.append(vector_j)
     else:
         print("Vector j no es un numero real")
-        return continuar()
+        return nuevo_juego()
 
     print("Vector k:")
     vector_k = (input())
@@ -104,7 +104,7 @@ def vector_b():
         listas_b.append(vector_k)
     else:
         print("Vector k no es un numero real")
-        return continuar()
+        return nuevo_juego()
     print(listas_b)
 
 listas_c = []
@@ -116,7 +116,7 @@ def vector_c():
         listas_c.append(vector_i)
     else:
         print("Vector i no es un numero real")
-        return continuar()
+        return nuevo_juego()
     
     print("Vector j:")
     vector_j = (input())
@@ -125,7 +125,7 @@ def vector_c():
         listas_c.append(vector_j)
     else:
         print("Vector j no es un numero real")
-        return continuar()
+        return nuevo_juego()
 
     print("Vector k:")
     vector_k = (input())
@@ -134,7 +134,7 @@ def vector_c():
         listas_c.append(vector_k)
     else:
         print("Vector k no es un numero real")
-        return continuar()
+        return nuevo_juego()
     print(listas_c)
 
 matriz = []
