@@ -1,7 +1,6 @@
 Sub-Competencia: 
-            Operadores mas complejos.
-Error original:
-            #Operaciones basicas
+            Operaciones mas complejas.
+Error original: El archivo contenia operaciones basicas.
  def multiplicar():
         print("Primer numero multiplicando: ")
         n1 = (input())
@@ -123,8 +122,7 @@ def todas():
         print("Segundo numero no valido")
         return continuar()
 
-Cambio realizado:
-            #Productos de Vectrores.
+Cambio realizado: Se cambio por productos de vectores y sus magnitudes.
 def producto_cruz():
     print("Forma axb")
     vector_a()
@@ -213,7 +211,44 @@ def magnitud_de_vectores():
     return nuevo_juego()
 Líneas de código donde se ve la corrección:
             142 a 227
+            
+=========================================================================================================
 
+Sub-Competencia: 
+            Aplicar y demostrar sus conocimientos de programación.
+Error original: Habia puesto un else: exit para terminar el while 
+def jugar():
+    print("Bienvenido al... ")
+    print("Calculo de producto cruz y Magnitudes.")
+    print("¿Quíeres empezar?")
+    contador = 0
+    while contador < 4:
+        start = (input())
+        while start == "No" or start == "no" or start ==  "Si" or start ==  "si":
+            if start == start == "Si" or start == "si":
+                return comenzar()
+            elif start == start == "No" or start == "no":
+                return fin()
+            else:
+                exit
+        else:
+            contador = contador + 1
+            print("Opción no encontrada")
+            if contador < 3:
+                print("Seleccione Si o NO")
+            if contador == 2:
+                print("Te quedan dos intentos")
+            if contador == 3:
+                print("Te quedan un intentos")
+                print ("Se cerrara el juego, si no se selecciona Si o No")
+            if contador == 4:
+                return error()
+Cambio realizado: Se eliminaron debido a que no teian utilidad.
+            #Se elimino
+Líneas de código donde se ve la corrección:
+            15 a 16
+
+=========================================================================================================
 
 Sub-Competencia: 
             Aplicar y demostrar sus conocimientos de programación.
@@ -224,6 +259,7 @@ Cambio realizado:
 Líneas de código donde se ve la corrección:
             Todas las lineas de README.md.
 
+=========================================================================================================
 
 Sub-Competencia: 
             Usar la forma mas apropiada al problema, para guardar los datos.
