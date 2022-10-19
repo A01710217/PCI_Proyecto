@@ -1,7 +1,8 @@
 """
 Calculo de producto cruz, producto punto y Magnitudes
 """
-def jugar():
+
+def jugar(): #Se inicializa el juego con esta función.
     print("Bienvenido al... ")
     print("Calculo de producto cruz y Magnitudes.")
     print("¿Quíeres empezar?")
@@ -25,8 +26,9 @@ def jugar():
                 print ("Se cerrara el juego, si no se selecciona Si o No")
             if contador == 4:
                 return error()
+                
 
-
+#Proyectar lo que se puede realizar.
 operacion =  """
 1.- Producto Cruz
 2.- Producto punto
@@ -35,7 +37,7 @@ operacion =  """
 5.- Finalizar
 """
 
-def es_numerico(numeros):
+def es_numerico(numeros): #Se ecalua que lo agregado a las listas sean números.
     try:
         float(numeros)
         return True
@@ -43,7 +45,7 @@ def es_numerico(numeros):
         return False
 
 listas_a = []
-def vector_a():
+def vector_a(): #Pedir números y agregarlos a la lista "listas_a".
     
     print("Vector i:")
     vector_i = (input())
@@ -76,7 +78,7 @@ def vector_a():
 
 listas_b = []
     
-def vector_b():
+def vector_b(): #Pedir números y agregarlos a la lista "listas_b".
     print("Vector i:")
     vector_i = (input())
     if es_numerico(vector_i):
@@ -106,7 +108,7 @@ def vector_b():
     print(listas_b)
 
 listas_c = []
-def vector_c():
+def vector_c(): #Pedir números y agregarlos a la lista "listas_c".
     print("Vector i:")
     vector_i = (input())
     if es_numerico(vector_i):
@@ -137,7 +139,7 @@ def vector_c():
 
 matriz = []
 
-def producto_cruz():
+def producto_cruz(): #Se realiza el "1.- Producto Cruz", realizando la operación y añadiendo datos a la matriz "matriz = []".
     print("Forma axb")
     vector_a()
     vector_b()
@@ -155,7 +157,7 @@ def producto_cruz():
     k = (listas_a[0] * listas_b[1]) - (listas_b[0] * listas_a[2] )
     print(f"{i}i {j}j {k}k")
 
-    print("¿Quíeres calcular la magnitud?")
+    print("¿Quíeres calcular la magnitud?") #Se pregunta si se calculara la Magnitud del resultado obtenido y luego se reinicia.
     contador = 0
     while contador < 4:
         calcularM = (input())
@@ -178,7 +180,7 @@ def producto_cruz():
             if contador == 4:
                 return error()
 
-def producto_punto():
+def producto_punto(): #Se realiza el "2.- Producto punto" y añadiendo datos a la matriz "matriz = []", se realiza la operacion, y se reinicia.
     print("Forma a*b")
     vector_a()
     vector_b()     
@@ -192,7 +194,7 @@ def producto_punto():
     print(i + j + k)
     return nuevo_juego()
 
-def triple_producto_escalar():
+def triple_producto_escalar(): #Se realiza el "3.- Triple producto escalar" y añadiendo datos a la matriz "matriz = []", se realiza la operacion, y se reinicia.
     print("Forma axb*c")
     vector_a()
     vector_b()
@@ -216,7 +218,7 @@ def triple_producto_escalar():
     print(i2 + j2 + k2)
     return nuevo_juego()
 
-def magnitud_de_vectores():
+def magnitud_de_vectores(): #Se realiza el "4.- Magnitud de vectores", se realiza la operacion, y se reinicia.
     print("Forma a = i + j + k")
     vector_a()
     print("Resultado")
@@ -224,7 +226,7 @@ def magnitud_de_vectores():
     print(magnitud)
     return nuevo_juego()
 
-def menu():
+def menu(): #Cómo el usuario seleccionara.
     contador = 0
     while contador < 4:
         while True:
@@ -252,7 +254,7 @@ def menu():
                 if contador == 4:
                     return error()
 
-def continuar():
+def continuar(): #Decidir si se continuara.
     contador = 0
     while contador < 4:
         otra = (input("¿Desea continuar jugando? "))
@@ -274,25 +276,25 @@ def continuar():
             if contador == 4:
                 return error()
 
-def nuevo_juego():
+def nuevo_juego(): #Esta funcion limpia las listas y matrices.
     matriz.clear()
     listas_a.clear()
     listas_b.clear()
     listas_c.clear()
     return continuar()
 
-def comenzar():
+def comenzar(): #Mostrar las opciones en pantalla y empesar la función "menu".
     print("Comencemos")
     print (operacion)
     print("Elige una opción.")
     return menu()
 
-def error():
+def error(): #Ayuda a imprimir "Se exedio el numero de intentos." y devoler la función "fin".
     print("Se exedio el numero de intentos.")
     return fin()
 
-def fin():
+def fin(): #Finaliza el programa.
     print("Adiós.")
     exit(1)
 
-jugar()
+jugar() Emepzar el programa.
