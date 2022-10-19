@@ -1,8 +1,236 @@
 Sub-Competencia: 
+            Operadores mas complejos.
+Error original:
+            #Operaciones basicas
+ def multiplicar():
+        print("Primer numero multiplicando: ")
+        n1 = (input())
+        if es_numerico(n1):
+            n1 = float(n1)
+            print("Segundo numero multiplicando: ")
+        else:
+            print("Primer numero no valido")
+            return continuar()
+        n2 = (input())
+        if es_numerico(n2):
+            n2 = float(n2)
+            print("Resultado: ", n1 * n2)
+            return continuar()
+        else:
+            print("Segundo numero no valido")
+            return continuar()
+
+def dividir():
+    print("Primer numero dividiendo: ")
+    n1 = (input())
+    if es_numerico(n1):
+        n1 = float(n1)
+        print("Segundo numero dividiendo: ")
+    else:
+        print("Primer numero no valido")
+        return continuar()
+    n2 = (input())
+    if es_numerico(n2):
+        n2 = float(n2)
+        if n2 == 0:
+            print("Imposible realizar esta operación")
+            return continuar()
+        print("Resultado: ", n1 / n2)
+        return continuar()
+    else:
+        print("Segundo numero no valido")
+        return continuar()
+
+def modulo():
+    print("Primer numero modulo: ")
+    n1 = (input())
+    if es_numerico(n1):
+        n1 = float(n1)
+        print("Segundo numero modulo: ")
+    else:
+        print("Primer numero no valido")
+        return continuar()
+    n2 = (input())
+    if es_numerico(n2):
+        n2 = float(n2)
+        if n2 == 0:
+            print("Imposible realizar esta operación")
+            return continuar()
+        print("Resultado: ", n1 % n2)
+        return continuar()
+    else:
+        print("Segundo numero no valido")
+        return continuar()
+
+def sumar():
+    print("Primer numero sumado: ")
+    n1 = (input())
+    if es_numerico(n1):
+        n1 = float(n1)
+        print("Segundo numero sumar: ")
+    else:
+        print("Primer numero no valido")
+        return continuar()
+    n2 = (input())
+    if es_numerico(n2):
+        n2 = float(n2)
+        print("Resultado: ", n1 + n2)
+        return continuar()
+    else:
+        print("Segundo numero no valido")
+        return continuar()
+
+def restar():
+    print("Primer numero restar: ")
+    n1 = (input())
+    if es_numerico(n1):
+        n1 = float(n1)
+        print("Segundo numero restar: ")
+    else:
+        print("Primer numero no valido")
+        return continuar()
+    n2 = (input())
+    if es_numerico(n2):
+        n2 = float(n2)
+        print("Resultado: ", n1 - n2)
+        return continuar()
+    else:
+        print("Segundo numero no valido")
+        return continuar()
+
+def todas():
+    print("Primer numero: ")
+    n1 = (input())
+    if es_numerico(n1):
+        n1 = float(n1)
+        print("Segundo numero: ")
+    else:
+        print("Primer numero no valido")
+        return continuar()
+    n2 = (input())
+    if es_numerico(n2):
+        n2 = float(n2)
+        if n2 == 0:
+            print("Imposible realizar esta operación")
+            return continuar()
+        print("Resultado multiplicacion: ", n1 * n2)
+        print("Resultado dividir: ", n1 / n2)
+        print("Resultado modulo: ", n1 % n2)
+        print("Resultado suma: ", n1 + n2)
+        print("Resultado resta: ", n1 - n2)
+        return continuar()
+    else:
+        print("Segundo numero no valido")
+        return continuar()
+
+Cambio realizado:
+            #Productos de Vectrores.
+def producto_cruz():
+    print("Forma axb")
+    vector_a()
+    vector_b()
+    matriz.append(["i", "j", "k"])       
+    matriz.append(listas_a)
+    matriz.append(listas_b)
+    print(f""" 
+    {matriz[0]}
+    {matriz[1]}
+    {matriz[2]}
+    """)                            
+    print("Resultado")
+    i = (listas_a[1] *  listas_b[2]) - (listas_b[1] * listas_a[2])
+    j = -((listas_a[0] * listas_b[2]) - (listas_b[0] * listas_a[2])) 
+    k = (listas_a[0] * listas_b[1]) - (listas_b[0] * listas_a[2] )
+    print(f"{i}i {j}j {k}k")
+
+    print("¿Quíeres calcular la magnitud?")
+    contador = 0
+    while contador < 4:
+        calcularM = (input())
+        if calcularM == "Si" or calcularM == "si":
+            magnitud = ((i ** 2) + (j ** 2) + (k ** 2))**.5
+            print(magnitud)
+            return nuevo_juego()
+        elif calcularM == "No" or calcularM == "no":
+            return nuevo_juego()
+        else:
+            contador += 1
+            print("Opción no encontrada")
+            if contador < 3:
+                print("Seleccione Si o NO")
+            if contador == 2:
+                print("Te quedan dos intentos")
+            if contador == 3:
+                print("Te quedan un intentos")
+                print ("Se cerrara el juego, si no se selecciona Si o No")
+            if contador == 4:
+                return error()
+
+def producto_punto():
+    print("Forma a*b")
+    vector_a()
+    vector_b()     
+    matriz.append(listas_a)
+    matriz.append(listas_b)
+    print(f"{matriz[0]} * {matriz[1]}")
+    print("Resultado")
+    i = (listas_a[0]) * (listas_b[0])
+    j = (listas_a[1]) * (listas_b[1])
+    k = (listas_a[2]) * (listas_b[2])
+    print(i + j + k)
+    return nuevo_juego()
+
+def triple_producto_escalar():
+    print("Forma axb*c")
+    vector_a()
+    vector_b()
+    vector_c()
+    matriz.append(["i", "j", "k"])
+    matriz.append(listas_a)
+    matriz.append(listas_b)
+    print(f""" 
+    {matriz[0]}
+    {matriz[1]} * {listas_c}
+    {matriz[2]}
+    """)
+
+    print("Resultado")
+    i = (listas_a[1] *  listas_b[2]) - (listas_b[1] * listas_a[2])
+    j = -((listas_a[0] * listas_b[2]) - (listas_b[0] * listas_a[2])) 
+    k = (listas_a[0] * listas_b[1]) - (listas_b[0] * listas_a[2] )
+    i2 = i * (listas_c[0])
+    j2 = j * (listas_c[1])
+    k2 = k * (listas_c[2])
+    print(i2 + j2 + k2)
+    return nuevo_juego()
+
+def magnitud_de_vectores():
+    print("Forma a = i + j + k")
+    vector_a()
+    print("Resultado")
+    magnitud = ((listas_a[0] * listas_a[0]) + (listas_a[1] * listas_a[1]) + (listas_a[2] * listas_a[2])) ** .5
+    print(magnitud)
+    return nuevo_juego()
+Líneas de código donde se ve la corrección:
+            142 a 227
+
+
+Sub-Competencia: 
             Aplicar y demostrar sus conocimientos de programación.
 Error original:
             Falto la entrega.
 Cambio realizado:
             Ya esta esa parte.
 Líneas de código donde se ve la corrección:
-            
+            Todas las lineas de README.md.
+
+
+Sub-Competencia: 
+            Usar la forma mas apropiada al problema, para guardar los datos.
+Error original:
+            Falto la entrega.
+Cambio realizado:
+            Ya esta esa parte.
+Líneas de código donde se ve la corrección:
+            47 a 138
+
