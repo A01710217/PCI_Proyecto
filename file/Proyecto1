@@ -13,8 +13,6 @@ def jugar():
                 return comenzar()
             elif start == start == "No" or start == "no":
                 return fin()
-            else:
-                exit
         else:
             contador = contador + 1
             print("Opción no encontrada")
